@@ -108,8 +108,11 @@
          
           var imageData = context.getImageData(0, 0, 600, 500)// creates dimesions same as 1st canvas
           
-        } // end of img.onload
+          for (var i = 0; i < image.getWidth(); i++) {
+                for (var j = 0; j < image.getHeight(); j++) {
+                    image.setRGB(i, j, new Color(0, 0, 250).getRGB());        } // (from stack overflow) sets the color of the image to all blue
         
+           context2.putImageData(imageData, 0, 0); // puts data from image onto the canvas
         img.src = reader.result;
       } //  end of reader.onload
       
@@ -145,6 +148,16 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
       </script>
+     
+       <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById('myCanvas2');// from above changed canvas to canvas 2(all lines for this canvas)
+        var context2 = canvas2.getContext("2d");//context for canvas 2
+        context2.font = '20pt Calibri';//font/size
+        context2.fillStyle = "black";//color of words
+        context2.fillText("Blue image will go here", 10, 20);// position for new blue image
+      </script>
+     
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
