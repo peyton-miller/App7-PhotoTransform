@@ -112,8 +112,10 @@
                 for (var j = 0; j < image.getHeight(); j++) {
                     image.setRGB(i, j, new Color(0, 0, 250).getRGB());        } // (from stack overflow) sets the color of the image to all blue
         
-           context2.putImageData(imageData, 0, 0); // puts data from image onto the canvas
-        img.src = reader.result;
+         context2.putImageData(imageData, 0, 0); // puts data from image onto the canvas
+        }
+           
+           img.src = reader.result;
       } //  end of reader.onload
       
       reader.readAsDataURL(file);
