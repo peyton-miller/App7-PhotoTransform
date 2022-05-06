@@ -102,8 +102,11 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
           
+         var canvas2 = document.getElementById('myCanvas2'); //creates 2nd canvas
+         var context2 = canvas2.getContext("2d")// (mdn web docs helped with this line) allows for a 2d drawing context for canvas 2    
           
-          
+         
+          var imageData = context.getImageData(0, 0, 600, 500)// creates dimesions same as 1st canvas
           
         } // end of img.onload
         
